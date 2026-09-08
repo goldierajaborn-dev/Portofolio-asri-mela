@@ -18,13 +18,14 @@ import {
   Server,
   Smartphone,
 } from "lucide-react"
-import {
-  FaDiscord,
-  FaInstagram,
-  FaGithub,
-  FaLinkedin,
-  FaXTwitter,
-} from "react-icons/fa6"
+import type { IconType } from "react-icons"
+
+type SocialLink = {
+  icon: IconType
+  label: string
+  value?: string
+  href: string
+}
 
 
 export const stats = [
@@ -35,9 +36,9 @@ export const stats = [
 ]
 
 export const highlights = [
-  { icon: MapPin, text: "Based in Pasuruan City" },
+  { icon: MapPin, text: "Based in Indonesia" },
   { icon: Briefcase, text: "Open for freelance work" },
-  { icon: GraduationCap, text: "RPL Student at SMKN 1 Kota Pasuruan" },
+  { icon: GraduationCap, text: "RPL Student" },
   {
     icon: Coffee,
     text: "Finding details that others sometimes overlook",
@@ -116,7 +117,7 @@ export const projects = [
       "Website untuk melakukan peminjaman akun game.",
     image: "/images/pinjam.png",
     techStack: ["Next.js","Tailwind Css","Shadcn Ui","supabase"],
-    demoUrl: "https://www.bagus-hidayat.my.id/",
+    demoUrl: "#",
     githubUrl: "#",
   },
 ];
@@ -160,32 +161,20 @@ export const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "goldiegladwin77@gmail.com",
-    href: "mailto:goldiegladwin77@gmail.com",
+    value: "asrimela14410@gmail.com",
+    href: "mailto:asrimela14410@gmail.com",
   },
   {
     icon: Phone,
-    label: "Phone",
-    value: "081336540855",
-    href: "tel:+6281336540855",
-  },
-  {
-    icon: FaInstagram,
-    label: "Instagram",
-    value: "Goldiegladwin",
-    href: "https://instagram.com/Goldiegladwin",
-  },
-  {
-    icon: FaDiscord,
-    label: "Discord",
-    value: "goldieglad",
-    href: "https://discord.com/users/1178605890031591516",
+    label: "WhatsApp",
+    value: "+62 881-7047-793",
+    href: "https://wa.me/628817047793",
   },
 ]
 
 export const education = [
   {
-    school: "SMKN 1 Kota Pasuruan",
+    school: "Software Engineering School",
     major: "Rekayasa Perangkat Lunak (RPL)",
     startYear: "2025",
     endYear: "Present",
@@ -193,47 +182,18 @@ export const education = [
 ]
 
 export const aboutMe = {
-  name: "Goldie Gladwin",
-  nickname: "Goldie",
-  role: "Student & Full Stack Developer",
-  location: "Pasuruan City",
+  name: "Asri Mela Aldian Syah",
+  nickname: "Mela",
+  role: "RPL Student & Aspiring Web Developer",
+  location: "Indonesia",
   quote:
-    "Zero is the beginning of everything! Nothing can begin unless it starts there!",
+    "Small steps, consistent learning, and thoughtful work create meaningful results.",
   description:
-    "Saya adalah Goldie Gladwin, seorang siswa Rekayasa Perangkat Lunak yang memiliki ketertarikan pada dunia web development. Saya senang mempelajari teknologi baru, membangun berbagai project, dan mengeksplorasi bagaimana sebuah website dapat dibuat agar terlihat menarik sekaligus berfungsi dengan baik. Saya juga memiliki perhatian terhadap detail dan sering menemukan hal-hal kecil yang mungkin terlewat oleh orang lain. Saat ini saya terus mengembangkan kemampuan saya di bidang frontend maupun backend untuk menjadi seorang full stack developer.",
+    "Saya adalah Asri Mela Aldian Syah, seorang siswi Rekayasa Perangkat Lunak yang tertarik mempelajari dunia teknologi dan pengembangan website. Saya senang mengeksplorasi hal-hal baru, belajar membuat tampilan yang menarik, serta mengembangkan kemampuan secara bertahap melalui berbagai project.",
 }
 
-export const socialLinks = [
-  {
-    icon: FaInstagram,
-    label: "Instagram",
-    value: "Goldiegladwin",
-    href: "https://instagram.com/Goldiegladwin",
-  },
-  {
-    icon: FaDiscord,
-    label: "Discord",
-    value: "goldieglad",
-    href: "https://discord.com/users/1178605890031591516",
-  },
-]
-export const footerSocialLinks = [
-  {
-    icon: FaGithub,
-    label: "GitHub",
-    href: "https://github.com/username-kamu",
-  },
-  {
-    icon: FaLinkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/username-kamu",
-  },
-  {
-    icon: FaXTwitter,
-    label: "Twitter",
-    href: "https://twitter.com/username-kamu",
-  },
-]
+export const socialLinks: SocialLink[] = []
+export const footerSocialLinks: SocialLink[] = []
 export const experiences = [
   {
     type: "work",
@@ -298,7 +258,7 @@ export const experiences = [
   {
     type: "education",
     title: "Software Engineering Student",
-    company: "SMKN 1 Kota Pasuruan",
+    company: "Software Engineering School",
     period: "2025 - Present",
     description:
       "Mempelajari pengembangan perangkat lunak, website development, database, dan berbagai teknologi modern untuk membangun aplikasi.",

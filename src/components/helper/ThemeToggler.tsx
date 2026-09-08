@@ -1,30 +1,29 @@
 "use client";
-import {Moon, Sun} from "lucide-react";
-import { useTheme } from "next-themes";
-import React, {useEffect, useState} from 'react'
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useState } from 'react';
 
 const ThemeToggler = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
 
-const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-const {theme, setTheme, systemTheme} = useTheme();
+  if (!mounted) return null;
 
-useEffect(() => {
-  const mountCheck=()=> {setMounted(true)};
-  mountCheck();
-}, []);
+  const currentTheme = theme === 'system' ? systemTheme : theme;
 
-if(!mounted) return null;
-
-const currentTheme = theme === "system" ? systemTheme : theme;
-
-  return <button onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")} className="p-2 transition w-10 h-10 cursor-pointer bg-gray-100 dark:bg-gray-800 rounded-lg flex flex-col items-center justify-center">
-    {currentTheme === "dark" ? (
-        <Sun className="text-white w-7 h-7 cursor-pointer" />
-    ):(
-        <Moon className="text-black w-7 h-7 cursor-pointer" />
-    )}
-  </button>
-}
+  return (
+    <button
+      onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
+      className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-pink-200 bg-white/80 text-slate-700 shadow-sm transition-transform duration-200 hover:scale-105 dark:border-pink-500/20 dark:bg-slate-900/70 dark:text-slate-200'
+      aria-label='Toggle theme'
+    >
+      {currentTheme === 'dark' ? <Sun className='h-5 w-5' /> : <Moon className='h-5 w-5' />}
+    </button>
+  );
+};
 
 export default ThemeToggler

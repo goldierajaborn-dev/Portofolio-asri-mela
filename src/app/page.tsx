@@ -1,9 +1,7 @@
-import  Home  from "@/components/Home/Home";
-import React from 'react'
+import ConsolePortfolio from "@/components/ConsolePortfolio";
 
-const Homepage = () => {
-  return <Home />;
-};
+export default function Homepage() {
+  return <ConsolePortfolio />;
+}
 
-export default Homepage;
 

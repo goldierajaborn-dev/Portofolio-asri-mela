@@ -1,63 +1,63 @@
 'use client';
-import React, { useState,useEffect } from 'react'
-import Logo from '@/components/helper/Logo'
-import { Navlinks } from '@/Constant/Constant'
-import Link from 'next/link'
-import {Download, MenuIcon} from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import Logo from '@/components/helper/Logo';
+import { Navlinks } from '@/Constant/Constant';
+import Link from 'next/link';
+import { Download, MenuIcon } from 'lucide-react';
 import ThemeToggler from '@/components/helper/ThemeToggler';
 
-
 type Props = {
-    openNav:()=>void;
-}
+  openNav: () => void;
+};
 
 const Nav = ({ openNav }: Props) => {
+  const [navBg, setNavBg] = useState(false);
 
-    const [navBg,setNavBg]=useState(false);
+  useEffect(() => {
+    const handler = () => {
+      setNavBg(window.scrollY >= 80);
+    };
 
-    useEffect(() => {
-        const handler =()=>{
-            if(window.scrollY >= 90) setNavBg(true);
-            if(window.scrollY < 90) setNavBg(false);
-        };
+    window.addEventListener('scroll', handler);
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
 
-        window.addEventListener("scroll",handler);
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        navBg ? 'bg-white/75 shadow-[0_12px_30px_rgba(236,72,153,0.08)] backdrop-blur-xl dark:bg-slate-950/70' : 'bg-transparent'
+      }`}
+    >
+      <div className='mx-auto flex h-[12vh] w-[90%] max-w-7xl items-center justify-between'>
+        <Logo />
 
-        return () => window.removeEventListener("scroll",handler);
-    },[])
+        <nav className='hidden items-center gap-8 lg:flex'>
+          {Navlinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className='text-sm font-semibold text-slate-700 transition-all duration-200 hover:text-pink-600 dark:text-slate-200 dark:hover:text-pink-300'
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
 
-  return <div className={`transition-all ${navBg ? "dark:bg-gray-800 bg-white shadow-md" : "fixed"} 
-  duration-200 h-[12vh] z-100 fixed w-full }`}>
-    <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
-      {/* logo */}
-        <Logo/>
-        {/* navlinks */}
-        <div className="hidden lg:flex items-center space-x-10">
-            {Navlinks.map((link, index) => {
-                return (
-                <Link key={index} href={link.href} className="dark:text-white text-black hover:text-yellow-500 dark:hover:text-yellow-200 font-semibold transition-all duration-200"
-                >
-                    <p>{link.name}</p>
-                </Link>
-                );
-})}
+        <div className='flex items-center gap-3'>
+          <a href='#contact'>
+            <button className='hidden rounded-full bg-gradient-to-r from-pink-500 to-rose-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_18px_35px_rgba(236,72,153,0.25)] transition-transform duration-200 hover:scale-[1.02] sm:inline-flex'>
+              <Download className='mr-2 h-4 w-4' />
+              Download CV
+            </button>
+          </a>
+          <ThemeToggler />
+          <button className='rounded-xl border border-slate-200 bg-white/60 p-2 text-slate-700 shadow-sm lg:hidden dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-200' onClick={openNav}>
+            <MenuIcon className='h-5 w-5' />
+          </button>
         </div>
-        {/* Button */}
-        <div className="flex items-center space-x-4">
-            <a href="#_" className="box-border relative z-20 inline-flex items-center justify-center w-auto px-6 sm:px-8 py-3 overflow-hidden font-bold text-white transition-all duration-300 bg-indigo-600 rounded-md cursor-pointer group ring-offset-2 ring-1 ring-indigo-300 ring-offset-indigo-200 hover:ring-offset-indigo-500 ease focus:outline-none">
-                <span className="relative z-20 flex items-center space-x-2 text-sm">
-                   <Download className="w-4 h-4"/>
-                   <span>Download CV</span>
-                </span>
-            </a>
-            {/* theme toggler */}
-            <ThemeToggler/>
-            {/* burger menu */}
-            <MenuIcon onClick={openNav} className="w-8 h-8 cursor-pointer text-black dark:text-white lg:hidden"/>
-
-        </div>
-    </div>
-  </div>
+      </div>
+    </header>
+  );
 };
 
 export default Nav;
