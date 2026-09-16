@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Filter, Sparkles } from "lucide-react";
-import { SiGithub } from "react-icons/si";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { projects } from "../../../data";
@@ -190,7 +189,7 @@ export default async function ProjectCatalogPage({
                   </div>
                 </div>
 
-                {/* Footer Detail Trigger & Github */}
+                {/* Footer Detail Trigger */}
                 <div
                   className="mt-6 pt-4 border-t flex items-center justify-between"
                   style={{ borderColor: "var(--border)" }}
@@ -204,16 +203,12 @@ export default async function ProjectCatalogPage({
                     <ArrowRight className="w-4 h-4" />
                   </Link>
 
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-lg border text-slate-500 hover:text-indigo-600 transition-colors"
-                    style={{ borderColor: "var(--border)" }}
-                    aria-label="GitHub Repository"
+                  <span
+                    className="text-[11px] px-2.5 py-1 rounded-md border font-medium text-slate-500 dark:text-slate-400"
+                    style={{ borderColor: "var(--border)", background: "var(--bg-soft)" }}
                   >
-                    <SiGithub className="w-4 h-4" />
-                  </a>
+                    Internal
+                  </span>
                 </div>
               </article>
             ))}

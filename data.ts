@@ -115,7 +115,7 @@ export const projects: ProjectItem[] = [
       "Database PostgreSQL performa tinggi yang diamankan dengan Row Level Security",
     ],
     demoUrl: "#",
-    githubUrl: "https://github.com/goldierajaborn-dev",
+    githubUrl: "#",
   },
   {
     id: "2",
@@ -136,7 +136,7 @@ export const projects: ProjectItem[] = [
       "Dashboard analitik kemajuan magang untuk guru pembimbing sekolah",
     ],
     demoUrl: "#",
-    githubUrl: "https://github.com/goldierajaborn-dev",
+    githubUrl: "#",
   },
   {
     id: "3",
@@ -157,7 +157,7 @@ export const projects: ProjectItem[] = [
       "Optimasi bundle Next.js dan pengujian performa render React",
     ],
     demoUrl: "#",
-    githubUrl: "https://github.com/goldierajaborn-dev",
+    githubUrl: "#",
   },
 ];
 
