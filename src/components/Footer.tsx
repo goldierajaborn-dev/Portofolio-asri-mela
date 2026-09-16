@@ -1,5 +1,4 @@
-import { Mail, MessageCircle } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -18,47 +17,20 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Social Icons */}
+          {/* Direct Email Contact Link */}
           <div className="flex items-center gap-3">
-            <a
-              href="https://wa.me/628817047793"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:-translate-y-0.5"
-              style={{
-                background: "var(--surface)",
-                borderColor: "var(--border)",
-                color: "var(--text)",
-              }}
-            >
-              <MessageCircle className="w-4 h-4" />
-            </a>
-            <a
-              href="https://github.com/goldierajaborn-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:-translate-y-0.5"
-              style={{
-                background: "var(--surface)",
-                borderColor: "var(--border)",
-                color: "var(--text)",
-              }}
-            >
-              <SiGithub className="w-4 h-4" />
-            </a>
             <a
               href="mailto:asrimela14410@gmail.com"
               aria-label="Email"
-              className="w-10 h-10 rounded-full border flex items-center justify-center transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-semibold transition-all hover:-translate-y-0.5 shadow-sm"
               style={{
                 background: "var(--surface)",
                 borderColor: "var(--border)",
                 color: "var(--text)",
               }}
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-3.5 h-3.5 text-amber-600" />
+              <span>asrimela14410@gmail.com</span>
             </a>
           </div>
         </div>

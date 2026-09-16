@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Copy, Mail, MessageCircle, Send } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { Check, Copy, Mail, Send } from "lucide-react";
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -104,7 +103,7 @@ export default function ContactSection() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs uppercase font-medium tracking-wider" style={{ color: "var(--text-muted)" }}>
-                      Email
+                      Email Langsung
                     </p>
                     <p className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>
                       {email}
@@ -121,76 +120,54 @@ export default function ContactSection() {
                   {copied ? (
                     <>
                       <Check className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>Copied!</span>
+                      <span>Tersalin!</span>
                     </>
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5" />
-                      <span>Copy</span>
+                      <span>Salin</span>
                     </>
                   )}
                 </button>
               </div>
 
-              {/* WhatsApp Card */}
-              <a
-                href="https://wa.me/628817047793"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3.5 p-4 rounded-2xl border shadow-sm transition-all hover:scale-102 group"
+              {/* Status Ketersediaan Card */}
+              <div
+                className="p-4 rounded-2xl border shadow-sm"
                 style={{
                   background: "var(--surface)",
                   borderColor: "var(--border)",
                 }}
               >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                  style={{
-                    background: "var(--accent-soft)",
-                    color: "var(--accent)",
-                  }}
-                >
-                  <MessageCircle className="w-5 h-5" />
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    Status Ketersediaan
+                  </span>
                 </div>
-                <div>
-                  <p className="text-xs uppercase font-medium tracking-wider" style={{ color: "var(--text-muted)" }}>
-                    WhatsApp
-                  </p>
-                  <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>
-                    +62 881-7047-793
-                  </p>
-                </div>
-              </a>
+                <p className="text-sm font-medium" style={{ color: "var(--text)" }}>
+                  Terbuka untuk kesempatan magang (PKL), kolaborasi proyek, dan eksplorasi teknologi baru.
+                </p>
+              </div>
 
-              {/* GitHub Card */}
-              <a
-                href="https://github.com/goldierajaborn-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3.5 p-4 rounded-2xl border shadow-sm transition-all hover:scale-102 group"
+              {/* Fast Response Card */}
+              <div
+                className="p-4 rounded-2xl border shadow-sm"
                 style={{
                   background: "var(--surface)",
                   borderColor: "var(--border)",
                 }}
               >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-                  style={{
-                    background: "var(--accent-soft)",
-                    color: "var(--accent)",
-                  }}
-                >
-                  <SiGithub className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs uppercase font-medium tracking-wider" style={{ color: "var(--text-muted)" }}>
-                    GitHub
-                  </p>
-                  <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>
-                    goldierajaborn-dev
-                  </p>
-                </div>
-              </a>
+                <p className="text-xs uppercase font-medium tracking-wider mb-1" style={{ color: "var(--text-muted)" }}>
+                  Waktu Respon &amp; Lokasi
+                </p>
+                <p className="text-sm font-medium" style={{ color: "var(--text)" }}>
+                  Indonesia (WIB / UTC+7) • Membalas surat elektronik dalam 1x24 jam kerja.
+                </p>
+              </div>
             </div>
           </div>
 
