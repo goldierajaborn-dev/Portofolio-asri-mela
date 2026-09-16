@@ -80,45 +80,84 @@ export const skillCategories = [
   },
 ]
 
-export const projects = [
+export type ProjectItem = {
+  id: string;
+  slug: string;
+  title: string;
+  category: "web" | "fullstack" | "frontend";
+  categoryLabel: string;
+  description: string;
+  fullDescription: string;
+  image: string;
+  techStack: string[];
+  features: string[];
+  demoUrl: string;
+  githubUrl: string;
+};
+
+export const projects: ProjectItem[] = [
   {
-    title: "Management Siswa",
+    id: "1",
+    slug: "management-siswa",
+    title: "Student Management System",
+    category: "fullstack",
+    categoryLabel: "Fullstack Web",
     description:
-      "Sistem management sekolah untuk menilai dan mengelola seluruh murid.",
+      "Sistem management sekolah komprehensif untuk menilai, mencatat, dan mengelola data seluruh murid secara terstruktur.",
+    fullDescription:
+      "Dirancang untuk mengatasi hambatan administratif di lingkungan sekolah kejuruan, sistem ini mengotomatiskan pencatatan data siswa, siklus penilaian akademik, dan pemantauan presensi harian. Dibangun dengan Next.js App Router dan Supabase PostgreSQL dengan perlindungan hak akses data berbasis peran (Role-Based Access).",
     image: "/images/managemens.png",
-    techStack: ["Next.js","Tailwind Css","Shadcn Ui","supabase"],
+    techStack: ["Next.js", "Tailwind CSS", "Shadcn UI", "Supabase", "TypeScript"],
+    features: [
+      "Role-based authentication & permissions untuk guru dan staf tata usaha",
+      "Kalkulasi penilaian akademik otomatis dan arsip riwayat nilai siswa",
+      "Pencatatan presensi siswa real-time dan ekspor laporan berkala",
+      "Database PostgreSQL performa tinggi yang diamankan dengan Row Level Security",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/goldierajaborn-dev",
   },
-
   {
-    title: "Management Magang",
+    id: "2",
+    slug: "management-magang",
+    title: "Internship Management System",
+    category: "web",
+    categoryLabel: "Web Platform",
     description:
-      "Sistem management magang untuk anak SMK beserta guru dan DUDI.",
+      "Platform koordinasi terpadu untuk monitoring magang siswa SMK bersama guru pembimbing dan mitra industri (DUDI).",
+    fullDescription:
+      "Platform koordinasi terpadu yang menjembatani siswa magang SMK, guru pembimbing, dan mitra dunia usaha/dunia industri (DUDI). Memudahkan pengisian jurnal logbook harian, verifikasi presensi kerja lapangan, serta evaluasi performa magang secara terpusat dan transparan.",
     image: "/images/managementm.png",
-    techStack: ["Next.js","Tailwind Css","Shadcn Ui","supabase"],
+    techStack: ["Next.js", "Tailwind CSS", "Shadcn UI", "Supabase", "TypeScript"],
+    features: [
+      "Jurnal logbook harian siswa dengan status approval pembimbing industri",
+      "Monitoring kehadiran magang berbasis jadwal kerja mitra DUDI",
+      "Evaluasi & penilaian kompetensi kerja industri langsung oleh mentor perusahaan",
+      "Dashboard analitik kemajuan magang untuk guru pembimbing sekolah",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/goldierajaborn-dev",
   },
-
   {
-    title: "My App",
+    id: "3",
+    slug: "my-app",
+    title: "Developer Workspace & Playground",
+    category: "frontend",
+    categoryLabel: "Frontend App",
     description:
-      "Project frontend untuk mencoba dan mengeksplorasi berbagai fitur frontend menggunakan Next.js.",
+      "Ruang eksperimen frontend interaktif untuk menguji coba arsitektur React terkini, custom hooks, dan komponen dinamis.",
+    fullDescription:
+      "Ruang eksperimen frontend interaktif yang dibangun untuk mengeksplorasi fitur-fitur mutakhir Next.js, custom hooks, dynamic routing, micro-interactions, serta perancangan komponen UI modern yang siap pakai dan reusable sebelum diimplementasikan ke proyek berskala besar.",
     image: "/images/My app.png",
-    techStack: ["Next.js","Tailwind Css","Shadcn Ui"],
+    techStack: ["Next.js", "Tailwind CSS", "Shadcn UI", "TypeScript", "Lucide Icons"],
+    features: [
+      "Eksperimen custom hooks untuk manajemen interaksi dinamis",
+      "Integrasi micro-interactions dan animasi antarmuka responsif",
+      "Struktur modular clean architecture dan reusable component pattern",
+      "Optimasi bundle Next.js dan pengujian performa render React",
+    ],
     demoUrl: "#",
-    githubUrl: "#",
-  },
-
-  {
-    title: "Peminjaman Akun Game",
-    description:
-      "Website untuk melakukan peminjaman akun game.",
-    image: "/images/pinjam.png",
-    techStack: ["Next.js","Tailwind Css","Shadcn Ui","supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/goldierajaborn-dev",
   },
 ];
 
